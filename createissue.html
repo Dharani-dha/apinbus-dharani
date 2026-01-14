@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Issue | Issue Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6fb;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h2 {
+      font-size: 20px;
+    }
+
+    .navbar button {
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar button:hover {
+      background: #eee;
+    }
+
+    /* Form container */
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 90px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #667eea;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #667eea;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #5563d6;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #667eea;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>📝 Issue Tracker</h2>
+    <button onclick="window.location.href='dashboard.html'">Back</button>
+  </div>
+
+  <!-- Form -->
+  <div class="container">
+    <h1>Create New Issue</h1>
+
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="issueTitle" placeholder="Enter issue title" />
+
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="issueDescription" placeholder="Describe the issue in detail"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Priority</label>
+      <select id="issuePriority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Status</label>
+      <select id="issueStatus">
+        <option>Open</option>
+        <option>In Progress</option>
+        <option>Done</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Assigned To (email or name)</label>
+      <input type="text" id="assignedTo" placeholder="Assigned to (email)" />
+    </div>
+
+    <button id="createIssueBtn" class="btn">Create Issue</button>
+
+    <p id="issueMessage"></p>
+    <div class="back-link">
+      <a href="dashboard.html">← Back to Dashboard</a>
+    </div>
+  </div>
+  <script type="module" src="./js/auth.js"></script>
+  <script type="module" src="./js/createIssue.js"></script>
+</body>
+</html>
